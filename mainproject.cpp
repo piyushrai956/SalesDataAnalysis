@@ -13,7 +13,7 @@ struct salesdata
 
 void writedata()
 {
-    fstream file("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt", ios::app);
+    fstream file("data.txt", ios::app);
     if (!file.is_open()) 
     {
         cout << "\nError opening file!\n";
@@ -60,7 +60,7 @@ void writedata()
 
 void readdata()
 {
-    fstream file("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt");
+    fstream file("data.txt");
     if (!file.is_open()) 
     {
         cout << "\nError opening file!\n";
@@ -78,7 +78,7 @@ void searchdata(int key)
 {
     int found = 1;
 
-    fstream file("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt");
+    fstream file("data.txt");
     if (!file.is_open())
     {
         cout << "\nError opening file!\n";
@@ -106,14 +106,14 @@ void deletedata(int key)
 {
     int found = 0;
 
-    fstream file("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt");
+    fstream file("data.txt");
     if (!file.is_open())
     {
         cout << "\nError opening file!\n";
         return;
     }
     
-    ofstream temp("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\tempdata.txt");
+    ofstream temp("tempdata.txt");
     if (!temp.is_open())
     {
         cout << "\nError opening temp file!\n";
@@ -140,27 +140,27 @@ void deletedata(int key)
     if (found == 0)
     {
         cout << "\nData not found for year: " << key << endl;
-        remove("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\tempdata.txt");
+        remove("tempdata.txt");
         return;
     }
 
     if (found == 1)
     {
-        remove("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt");
-        rename("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\tempdata.txt", "D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt");
+        remove("data.txt");
+        rename("tempdata.txt", "data.txt");
     }
 }
 
 void plotdata()
 {
     cout << "\n" << "Plotting data...\n";
-    system("python D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\plotting.py");
+    system("python plotting.py");
 }
 
 void analysis()
 {
     cout << "\n" << "Performing data analysis...\n";
-    system("python D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\analysis.py");
+    system("python analysis.py");
 }
 
 int main() 
