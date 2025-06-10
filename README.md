@@ -34,7 +34,7 @@ This project allows users to:
   - Year-over-Year (YoY) revenue and expense growth
   - Summary of total profit, loss years, and profitability
 
-## 📊 Example Output (Analysis)
+## Example Output (Analysis)
 ```
 Total Revenue: 300000
 Total Expenses: 210000
