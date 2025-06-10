@@ -7,7 +7,7 @@ profits = []
 yoyrevgrowth = []
 yoyexpgrowth = []
 
-with open("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt", "r") as file:
+with open("data.txt", "r") as file:
     for line in file:
         parts = line.strip().split()
         year = int(parts[0])
