@@ -4,7 +4,7 @@ years = []
 revenues = []
 expenses = []
 
-with open("D:\\MyFolder\\c++\\sem2pracfile\\SalesDataAnalysissem2project\\data.txt", "r") as file:
+with open("data.txt", "r") as file:
     for line in file:
         parts = line.strip().split()
         years.append(parts[0])
